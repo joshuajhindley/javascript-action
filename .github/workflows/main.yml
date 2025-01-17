@@ -34,6 +34,10 @@ jobs:
         id: npm-install
         run: npm install
 
+      - name: Install Chrome
+        id: install-chrome
+        run: npx @puppeteer/browsers install chrome@stable
+
       - name: Execute
         id: npm-execute
         run: npm start
