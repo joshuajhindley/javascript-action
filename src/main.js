@@ -30,7 +30,7 @@ const updateSpreadsheet = async (world, us) => {
 }
 
 const scrapeData = async () => {
-  const browser = await puppeteer.launch({headless: 'new'})//({headless: false})
+  const browser = await puppeteer.launch({headless: 'new', args: ["--no-sandbox"]})//({headless: false})
   const page = await browser.newPage()
 
   await page.goto(process.env.URL_1)
