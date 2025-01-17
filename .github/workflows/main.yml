@@ -34,11 +34,9 @@ jobs:
         id: npm-install
         run: npm install
 
-      # - name: Install Chrome
-      #   id: install-chrome
-      #   run: |
-      #     sudo apt-get update
-      #     sudo apt-get install -y google-chrome-stable
+      - uses: oNaiPs/secrets-to-env-action@v1
+        with:
+          secrets: ${{ toJSON(secrets) }}
 
       - name: Execute
         id: npm-execute
