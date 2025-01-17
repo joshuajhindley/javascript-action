@@ -33,6 +33,7 @@ const scrapeData = async () => {
   const browser = await puppeteer.launch({headless: 'new', executablePath: "/usr/bin/google-chrome", args: ["--no-sandbox"]})//({headless: false})
   const page = await browser.newPage()
 
+  console.log(process.env.URL_1)
   await page.goto(process.env.URL_1)
 
   await page.waitForSelector('.sal-mip-quote__block-grid')
