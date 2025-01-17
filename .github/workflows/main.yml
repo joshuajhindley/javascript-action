@@ -31,8 +31,8 @@ jobs:
           cache: npm
 
       - name: Install Dependencies
-        id: npm-ci
-        run: npm ci
+        id: npm-install
+        run: npm install
 
       - name: Execute
         id: npm-execute
