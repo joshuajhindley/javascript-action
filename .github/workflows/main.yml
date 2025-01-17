@@ -36,7 +36,9 @@ jobs:
 
       - name: Install Chrome
         id: install-chrome
-        run: npx puppeteer browsers install chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
 
       - name: Execute
         id: npm-execute
