@@ -22,8 +22,8 @@ const updateSpreadsheet = async (world, us) => {
 
   worldCell.value = world
   usCell.value = us
-  time.value = now.toLocaleTimeString("en-NZ", { timezone: 'Pacific/Wellington' })
-  date.value = now.toLocaleDateString("en-NZ", { timezone: 'Pacific/Wellington' })
+  time.value = now.toLocaleTimeString()
+  date.value = now.toLocaleDateString()
   await sheet.saveUpdatedCells()
 
   process.exit(0)
@@ -33,7 +33,6 @@ const scrapeData = async () => {
   const browser = await puppeteer.launch({headless: 'new', executablePath: "/usr/bin/google-chrome", args: ["--no-sandbox"]})//({headless: false})
   const page = await browser.newPage()
 
-  console.log(process.env.URL_1)
   await page.goto(process.env.URL_1)
 
   await page.waitForSelector('.sal-mip-quote__block-grid')
