@@ -22,8 +22,8 @@ const updateSpreadsheet = async (world, us) => {
 
   worldCell.value = world
   usCell.value = us
-  time.value = now.toLocaleTimeString()
-  date.value = now.toLocaleDateString()
+  time.value = now.toLocaleTimeString("en-NZ", { timezone: 'Pacific/Auckland' })
+  date.value = now.toLocaleDateString("en-NZ", { timezone: 'Pacific/Auckland' })
   await sheet.saveUpdatedCells()
 
   process.exit(0)
